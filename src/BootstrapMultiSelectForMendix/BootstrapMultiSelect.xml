@@ -180,11 +180,18 @@ iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lD
             <category>Display</category>
             <description>The maximum number of selected items to display in the field before being replaced with the text 'n selected'</description>
         </property>
-        <property key="disabled" type="boolean" defaultValue="false">
+        
+        <property key="disabled" type="enumeration" defaultValue="security">
             <caption>Disabled</caption>
             <category>Display</category>
             <description>If true, makes the control disabled.</description>
+            <enumerationValues>
+                <enumerationValue key="no">No</enumerationValue>
+                <enumerationValue key="security">Based on security</enumerationValue>
+                <enumerationValue key="attribute">Based on attribute</enumerationValue>
+            </enumerationValues>
         </property>
+        
         <property key="disabledViaAttribute" type="attribute" required="false">
             <caption>Disabled via attribute</caption>
             <category>Display</category>
