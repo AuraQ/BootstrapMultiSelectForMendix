@@ -245,20 +245,28 @@ define( [
 
         _updateControlDisplay : function(){
             // fixed property gets checked first
-            if(this.disabled){
-                this._$combo.multiselect('disable');
-                
-            } else{
+            
+//             <enumerationValue key="no">No</enumerationValue>
+//             <enumerationValue key="security">Based on security</enumerationValue>
+//             <enumerationValue key="attribute">Based on attribute</enumerationValue>
+            
+            if(this.disabled === 'no'){
                 this._$combo.multiselect('enable');
-            }
-            // attribute property beats fixed property    
-            if(this.disabledViaAttribute){
-                if(this._contextObj.get(this.disabledViaAttribute) ){
+            } else if(this.disabled === 'security') {
+                // Check the security
+                if(this._contextObj.isReadonlyAttr(this._reference)){
                     this._$combo.multiselect('disable');
-                } else{
+                } else {
                     this._$combo.multiselect('enable');
                 }
-            } 
+            } else if(this.disabled === 'attribute' && this.disabledViaAttribute){
+                // attribute property beats fixed property  
+                if(this._contextObj.get(this.disabledViaAttribute)){
+                    this._$combo.multiselect('disable');
+                } else {
+                    this._$combo.multiselect('enable');
+                }
+            }
 
             // fixed property gets checked first
             if(this.visible){
