@@ -17,7 +17,7 @@ iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lD
                 <enumerationValue key="microflow">Microflow</enumerationValue>
             </enumerationValues>
         </property>
-        <property key="dataAssociation" type="entity" required="true" isPath="yes" pathType="referenceSet">
+        <property key="dataAssociation" type="entity" required="true" isPath="yes" pathType="referenceSet" allowNonPersistableEntities="true">
             <caption>Multi Select Source</caption>
             <category>Data source</category>
             <description>Select the entity in which the multi select options are stored. This property defines the reference between the context object and the tag object. </description> 
